@@ -1,51 +1,49 @@
 $( document ).ready(function() {
 
   //add first step
-  $('.center-block').append('<div class = "step" id="stepone">**stepone*</div>');
-  $('#signupForm').appendTo('#stepone');
-  $(' .signup-col-left ').appendTo('#stepone ');
-  $('.signup-col-right').hide();
+  $('#signupForm').append('<div class = "step" id="stepone"></div>');
+  $('#signupForm').append('<div class = "step" id="steptwo"></div>');
+  $('#steptwo').append('<div class = "col-md-6 col-sm-12 col-xs-12" ></div>');
+  $('#signupForm').append('<div class = "step" id="stepthree"></div>');
+  $('#steptwo').hide();
+  $('#stepthree').hide();
+  $('.signup-col-left ').appendTo('#stepone ');
+  $('.signup-col-right').appendTo('#stepthree ');
+  $('<a class = "btn btn-warning " id="oneStepBtn">Next Step</a>').appendTo('#stepone .col-md-6 ');
 
   //add fields on the first step
   $('.signup-col-right > .form-group:first').insertAfter('.signup-col-left > .form-group:first');
-  var countleft =  $('.signup-col-left > .form-group').length;
-  while (countleft > 4) {
-    $(' .signup-col-left > .form-group:last ').hide();
+  var countleft =  $('#stepone .signup-col-left > .form-group').length;
+  while (countleft > 5) {
+    $('#stepone .signup-col-left > .form-group:last ').appendTo('#steptwo .col-md-6 ');
     countleft--;
   }
-  //add btn Next Step on the first step
-  $('<a href="#" class = "btn btn-warning " id="oneStepBtn">Next Step</a>').appendTo('#stepone');
+   $('<a class = "btn btn-warning " id="secondStepBtn">Next Step</a>').appendTo('#steptwo .col-md-6 ');
+   $('#stepone .col-md-6 ').removeClass('signup-col-left ');
+   $('#stepthree .col-md-6').removeClass('signup-col-right ');
 
 //go to the second step
  $('#oneStepBtn').click(function(){
        $('#stepone').hide();
-        //add second step
-       $('.center-block').append('<div class = "step" id="steptwo">**steptwo*</div>');
-       $('#signupForm').appendTo('#steptwo');
-       $('.signup-col-left ').appendTo('#steptwo');
-       $('#steptwo .signup-col-right').hide();
-       $('#steptwo').hide();
-      //add class for button Next Step
-       $('#oneStepBtn').addClass('.stepsecon');
+       $('#steptwo').show();
+       //add btn Next Step on the first step
  });
 
  //go to the 3 step
- $('.stepsecon').click(function(){
+ $('#secondStepBtn').click(function(){
        $('#steptwo').hide();
-       //add third step
-       $('.center-block').append('<div class = "step" id="stepthree">**stepthree*</div>');
-       $('#signupForm').appendTo('#stepthree');
-       $('.signup-col-right ').appendTo('#stepthre');
-       //delete first field on the second step
-       $('#stepthre .signup-col-right > .form-group:first').hide();
-       //add fields on the step 2
-       var countleft =  $('.signup-col-left > .form-group').length;
-       while (countleft > 4) {
-          $(' .signup-col-left > .form-group:first ').hide();
-         countleft--;
-       }
-});
+       $('#stepthree').show();
+  });
 
 });
 
 //вторая колонка '.signup-col-right' первая колонка signup-col-left
+/*
+$('.col-md-12').css({
+   position:'absolute',
+   left: ($(window).width()
+     - $('.col-md-12').outerWidth())/2,
+   top: ($(window).height()
+     - $('.col-md-12').outerHeight())/2
+  });
+		*/

@@ -5,7 +5,6 @@ $( document ).ready(function() {
   $('#signupForm').append('<div class = "step" id="steptwo"></div>');
   $('#steptwo').append('<div class = "col-md-6 col-sm-12 col-xs-12" ></div>');
   $('#signupForm').append('<div class = "step" id="stepthree"></div>');
-  $('#igame-side-special').appendTo('#signupForm');
   $('#steptwo').hide();
   $('#stepthree').hide();
   $('.signup-col-left ').appendTo('#stepone ');
@@ -35,15 +34,15 @@ $( document ).ready(function() {
        $('#steptwo').hide();
        $('#stepthree').show();
   });
-  $('#signupForm').css({
-    padding: '5%',
-    });
 
-  $('#igame-side-special .special--bg-container .special--bg').css({
-    width:'200px',
-    height:'320px',
+  $('.center-block').css({
+      'margin-left': '25%',
+      'margin-right': '25%'
     });
-
+  $('div .btn-warning').not('#signupBtn' ).css({
+          'margin-left': '25%',
+          'margin-right': '25%'
+        });
 });
 
 //box-shadow: 0px 0px 0px 0 rgba(0,0,0,.1);

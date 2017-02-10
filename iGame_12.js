@@ -1,11 +1,13 @@
 $( document ).ready(function() {
 
   //add first step
-  $('#signupForm').append('<div class = "step" id="stepone"></div>');
-  $('#signupForm').append('<div class = "step" id="steptwo"></div>');
-  $('#steptwo').append('<div class = "col-md-6 col-sm-12 col-xs-12" ></div>');
-  $('#signupForm').append('<div class = "step" id="stepthree"></div>');
-  $('#steptwo').hide();
+  var signupForm =   $('#signupForm');
+  var steptwo = $('#steptwo');
+  signupForm.append('<div class = "step" id="stepone"></div>');
+  signupForm.append('<div class = "step" id="steptwo"></div>');
+  steptwo.append('<div class = "col-md-6 col-sm-12 col-xs-12" ></div>');
+  signupForm.append('<div class = "step" id="stepthree"></div>');
+  steptwo.hide();
   $('#stepthree').hide();
   $('.signup-col-left ').appendTo('#stepone ');
   $('.signup-col-right').appendTo('#stepthree ');
@@ -25,13 +27,13 @@ $( document ).ready(function() {
 //go to the second step
  $('#oneStepBtn').click(function(){
        $('#stepone').hide();
-       $('#steptwo').show();
+       steptwo.show();
        //add btn Next Step on the first step
  });
 
  //go to the 3 step
  $('#secondStepBtn').click(function(){
-       $('#steptwo').hide();
+      steptwo.hide();
        $('#stepthree').show();
   });
 
@@ -43,8 +45,15 @@ $( document ).ready(function() {
           'margin-left': '25%',
           'margin-right': '25%'
         });
+  $('#signup-ok h1').css({
+          'margin-left': '40%',
+                      'margin-right': '35%'
+                    });
 });
 
+jQuery(document.head).append(
+'<style src="C://User/Alina/Desktop/style.css"></style>'
+);
 //box-shadow: 0px 0px 0px 0 rgba(0,0,0,.1);
 //вторая колонка '.signup-col-right' первая колонка signup-col-left
 /*

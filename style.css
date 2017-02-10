@@ -1,0 +1,4 @@
+#signupForm[data-mm-step="1"] .signup-col-right,
+#signupForm[data-mm-step="2"] .signup-col-left  {
+  display: none;
+}
